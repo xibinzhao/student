@@ -33,6 +33,8 @@ public class ThreadPoolDemo {
                 "java线程池\n" +
                 "\tcorePoolSize   正常数量\n" +
                 "\tmaxPoolSize   最大线程数量";
+        String b = "https://www.cnblogs.com/dafanjoy/p/9729358.html";
+        String c = "https://www.cnblogs.com/dafanjoy/p/9729358.html";
 
     }
 
