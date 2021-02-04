@@ -148,9 +148,24 @@ java锁
                 多个线程进入一个队列  进行逐个获取锁   资源浪费大  但是 不存在长时间获取不到锁的问题
         非公平锁
                 多个线程抢锁  避免线程的休眠和线程的唤醒  资源浪费少  速度快  可能存在长时间获取不到锁
-                java线程池
-                corePoolSize   正常数量
-                maxPoolSize   最大线程数量
+java线程池
+        corePoolSize   核心线程数
+        maxPoolSize   最大线程数量
+        keepAliveTime   线程闲置时间 进行销毁
+        unit:keepAliveTime  销毁的时间单位
+        workQueue    等待队列
+            直接提交队列   BlockingQueue   不会在等待队列进行等待  直接提交至线程池，当线程池没有足够资源时。直接进行拒绝策略
+            有界任务队列   ArrayBlockingQueue 有初始化队列大小 当任务提交时直接进行创建线程,当线程数量达到corePoolSize时。进入队列进行等待。
+                         当等待队列达到最大值时。再次进行创建线程,当线程数量达到最大线程数且无法完成任务时。执行拒绝策略
+            无界任务队列   LinkedBlockingQueue 任务提交进入线程池 创建线程数,当线程数量达到corePollSize时进入等待队列。不再进行创建线程。
+            优先任务队列；  PriorityBlockingQueue 当任务进入队列时进行 compareTo 方法比较优先级。优先级高的先被执行。同样不会再次创建线程；
+        threadFactory  线程工程
+        handler   拒绝策略
+            当线程都被使用且  等待队列饱和时  进行任务拒绝
+
+
+
+
 nacos
     nacos  作用
         1.配置中心      存储在nacos服务当中
