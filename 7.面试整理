@@ -66,6 +66,8 @@ Spring 单例  启动的时候就创建出来  注入有set 构造
             客户端负载均衡器  ribbon
             分布式配置 spring cloud cofing
             rpc远程调用   fegin
+    rpc 是一种远程调用的 概念
+
 soa架构是否指单点登录
 soa服务是否可以通过rpc+网关拦截+请求转发进行实现
 什么情况下会使用 mongoDB
